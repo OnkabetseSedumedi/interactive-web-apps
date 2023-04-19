@@ -1,15 +1,14 @@
-// configuration.js
 
-const company = 'ACME Inc.'
-const year = 2022
  
 
 // scripts.js
 
+/*the import did not have any curly brackets*/
+
 import {
-    companyform ('configuration');}
+    company} from "./configuration.js";
 import {
-    year,configuration'}
+    year} from  "./configuration.js" ;
 
 const message = '© ' + company + ' (' + year + ')'
 document.querySelector('footer').innerText = message

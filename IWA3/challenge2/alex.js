@@ -1,8 +1,11 @@
 // alex.js
+/**they used public and private instead of const
+ * had to also put export
+ */
 
-const firstname = "Alex"
-const surname = "Naidoo"
-const role = "Head of Marketing"
+export const firstnameA = "Alex"
+export const surnameA = "Naidoo"
+export const roleA = "Head of Marketing"
 
-display= firstname + " " + surname + " (" + role + ")"
+const display= firstnameA + " " + surnameA + " (" + roleA + ")"
 document.querySelector('#alex').innerText = display
