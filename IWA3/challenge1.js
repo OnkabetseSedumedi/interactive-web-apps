@@ -8,7 +8,8 @@ const year = 2022
 
 import {
     companyform ('configuration');}
-import year= form ('configuration')
+import {
+    year,configuration'}
 
 const message = '© ' + company + ' (' + year + ')'
 document.querySelector('footer').innerText = message
