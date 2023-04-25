@@ -3,14 +3,14 @@ const secondaryPhone = '0219131568'
 
 // Only change below this line
 
-//both are strings, so you have to chane 1 in order to use typeof
+//both are strings, so you have to change 1 in order to use typeof
 
 
-let primaryValid = Boolean(primaryPhone) == primaryPhone 
-let secondaryValid = Boolean(secondaryPhone) == secondaryPhone
+const primaryValid = Boolean(primaryPhone) == primaryPhone 
+const secondaryValid = Boolean(secondaryPhone) == secondaryPhone
 
-if (primaryValid = false) { 
-    primaryValid=primaryPhone
+if (primaryValid === false) { 
+    primaryValid===primaryPhone
     secondaryValid=parseInt(secondaryPhone)
     
 }
