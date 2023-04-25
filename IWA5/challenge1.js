@@ -32,7 +32,7 @@ if (country= 'RSA'&& 1000>cart) {
     
 }
 
-if (country = 'RSA' & 1000>=cart) { 
+if (country = 'RSA' && 1000>=cart) { 
     shipping= 400
     
 }
@@ -42,4 +42,4 @@ location = 'NK' ? console.log(WARNING) : console.log('price', currency, shoes + 
 
 customers = '1'
 const location = 'RSA'
-currency = null
+currency = 'R'

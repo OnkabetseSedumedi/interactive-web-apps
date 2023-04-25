@@ -19,11 +19,11 @@ const minuteOfDay = 00;
   let startingAfterTax = salary - salary * taxAsDecimal  // 1 was used as a string 
   let balace = startingAfterTax - transport - food - rent
 
-  if (hourOfDay==undefined & minuteOfDay== undefined) {
+  if (hourOfDay===undefined && minuteOfDay=== undefined) {
     balace = 0
     
   }
-  else if (hourOfDay == undefined && minuteOfDay==undefined) {
+  else if (hourOfDay === undefined && minuteOfDay===undefined) {
     balace=startingAfterTax - transport - food - rent
     
   }
