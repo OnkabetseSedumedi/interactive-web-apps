@@ -2,7 +2,7 @@ FREE_WARNING = 'Free shipping only applies to single customer orders'
 BANNED_WARNING = 'Unfortunately we do not ship to your country of residence'
 NONE_SELECTED = '0'
 
-if (location = RSA) { shipping === 400 && currency === 'R' }
+if (location === RSA) { shipping === 400 && currency === 'R' }
 
 
 shipping = 600 
