@@ -11,7 +11,7 @@ const secondaryValid = Boolean(secondaryPhone) == secondaryPhone
 
 if (primaryValid === false) { 
     primaryValid===primaryPhone
-    secondaryValid=parseInt(secondaryPhone)
+    secondaryValid===parseInt(secondaryPhone)
     
 }
 
