@@ -13,7 +13,7 @@ const minuteOfDay = 00;
     taxAsDecimal= parseInt(taxAsDecimal)
     taxAsDecimal= tax/100
 
-    
+    console.log(taxAsDecimal)
 
 
   let startingAfterTax = salary - salary * taxAsDecimal  // 1 was used as a string 
