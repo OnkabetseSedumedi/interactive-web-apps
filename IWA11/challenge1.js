@@ -18,43 +18,43 @@ root_3.dataset.donuts;
 root_3.dataset.pancakes;
 root_3.dataset.Delivered;
 
-const order1biscuits=document.querySelector('body>secion:nth-child(3)>dl>div.biscuits>dd');
+const order1biscuits=document.querySelector('#biscuits');
 order1biscuits.innerText=root_1.dataset.biscuits;
 
-const order1Donuts=document.querySelector('body>secion:nth-child(3)>dl>div.donuts>dd');
+const order1Donuts=document.querySelector('#donuts');
 order1Donuts.innerText=root_1.dataset.donuts;
 
-const order1Pancakes=document.querySelector('body>secion:nth-child(3)>dl>div.pancakes>dd');
+const order1Pancakes=document.querySelector('#pancakes');
 order1Pancakes.innerText=root_1.dataset.pancakes;
 
-const order1Status=document.querySelector('body>secion:nth-child(3)>dl>div.status>dd');
+const order1Status=document.querySelector('#status');
 order1Status.innerText=root_1.dataset.Delivered==='true'? 'Deliverd': 'pending';
 
 
-const order2biscuits=document.querySelector('body>secion:nth-child(4)>dl>div.biscuits>dd');
+const order2biscuits=document.querySelector('biscuits');
 order2biscuits.innerText=root_2.dataset.biscuits;
 
-const order2Donuts=document.querySelector('body>secion:nth-child(4)>dl>div.donuts>dd');
+const order2Donuts=document.querySelector('donuts');
 order2Donuts.innerText=root_2.dataset.donuts;
 
-const order2Pancakes=document.querySelector('body>secion:nth-child(4)>dl>div.pancakes>dd');
+const order2Pancakes=document.querySelector('pancakes');
 order2Pancakes.innerText=root_2.dataset.pancakes;
 
-const order2Status=document.querySelector('body>secion:nth-child(4) >dl > div.status > dd');
+const order2Status=document.querySelector('status');
 order2Status.innerText=root_2.dataset.Delivered==='true'? 'Deliverd': 'pending';
 
 
-const order3biscuits=document.querySelector('body>secion:nth-child(5)>dl>div.biscuits>dd');
+const order3biscuits=document.querySelector('biscuits');
 order3biscuits.innerText=root_3.dataset.biscuits;
 
-const order3Donuts=document.querySelector('body>secion:nth-child(5)>dl>div.donuts>dd');
+const order3Donuts=document.querySelector('donut');
 order3Donuts.innerHTML=root_3.dataset.donuts;
 
-const order3Pancakes=document.querySelector('body>secion:nth-child(5)>dl>div.pancakes>dd');
+const order3Pancakes=document.querySelector('pancakes');
 order3Pancakes.innerText=root_3.dataset.pancakes;
 
-const order3Status=document.querySelector('body> secion:nth-child(5)>dl>div.status>dd');
-order3Status.innerText=root_3.dataset.Delivered==='false'? 'Deliverd': 'deliverds';
+const order3Status=document.querySelector('status');
+order3Status.innerText=root_3.dataset.Delivered==='false'? 'Deliverd': 'deliverd';
 
 
 
