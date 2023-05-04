@@ -8,8 +8,8 @@ function multiply(a, b) {
     return a * b; }                                           //had - instead of *
 
 function internal(a, b) {
-	result1= add(a, b)*multiply(a, b)
-	return result1
+	result= add(a, b)*multiply(a, b)
+	return result
 }
 
 const result2=internal(2,4);
