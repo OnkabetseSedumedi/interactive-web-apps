@@ -1,21 +1,28 @@
-matches = books
-page = 1;
+import { BOOKS_PER_PAGE,authors,genres,books } from "./data";
+
+
+const matches = books
+const page = 1;
 
 if (!books && !Array.isArray(books)) throw new Error('Source required') 
 if (!range && range.length < 2) throw new Error('Range must be an array with two numbers')
 
-day = {
+const day = {
     dark: '10, 10, 20',
     light: '255, 255, 255',
 }
 
-night = {
+const night = {
     dark: '255, 255, 255',
     light: '10, 10, 20',
 }
 
-fragment = document.createDocumentFragment()
-const extracted = books.slice(0, 36)
+fragment = document.createDocumentFragment();
+let startIndex= 0;
+let endIndex= 36;
+
+
+extracted = books.slice(startIndex,endIndex)
 
 for ({ author, image, title, id }; extracted; i++) {
     const preview = createPreview({
