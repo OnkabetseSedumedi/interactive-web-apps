@@ -1,9 +1,8 @@
-import {BOOKS_PER_PAGE,authers,genres,books} from "./data.js";
-matches = books
-page = 1;
+import {BOOKS_PER_PAGE,authors,genres,books} from "./data.js";
+const matches = books
+const page = 1;
 
-if (!books || !Array.isArray(books)) throw new Error('Source required') 
-if (!range && range.length < 2) throw new Error('Range must be an array with two numbers')
+
 
 const day = {
     dark: '10, 10, 20',
@@ -15,12 +14,12 @@ const night = {
     light: '10, 10, 20',
 };
 
-fragment=document.createDocumentFragment()
-extracted = books.slice(0, 36)
+fragment=document.createDocumentFragment();
+extracted= books.slice(0, 36)
 
-for (const{ author, image, title, id } of extracted) {
+for (const{ authors, image, title, id } of extracted) {
     const preview = createPreview({
-        author,
+        authors,
         id,
         image,
         title
@@ -52,7 +51,7 @@ element.value = 'any'
 element.innerText = 'All Authors'
 authors.appendChild(element)
 
-for ([id, nam ];Object.entries(authors); id++) {
+for (constid, name ;Object.entries(authors); id++) {
     document.createElement('option')
     element.value = value
     element = text
