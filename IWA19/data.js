@@ -1,4 +1,4 @@
-
+export {BOOKS_PER_PAGE,authors,genres,books}
 BOOKS_PER_PAGE = 36;
 
 authors = {
