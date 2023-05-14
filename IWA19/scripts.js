@@ -14,8 +14,26 @@ const night = {
     light: '10, 10, 20',
 };
 
-fragment=document.createDocumentFragment();
-extracted= books.slice(0, 36)
+const fragment=document.createDocumentFragment();
+const extracted= books.slice(0, 36)
+
+function createPreview( {authers,id,image,title}) {
+    const element = document.createElement('button');
+    element.classList = 'preview';
+    element.setAttribute('data-preview',id);
+
+    element.innerHTML =/*html*/`
+    <img classList = "preview__image" src="${image}"/>
+    <div classList="preview__info">
+        <h3 classList= "preview__title">${title}</h3>
+        <div classList="preview__auther">${authers}</div>
+    </div>
+    `;
+
+    return element;
+
+
+}
 
 for (const{ authors, image, title, id } of extracted) {
     const preview = createPreview({
@@ -27,14 +45,16 @@ for (const{ authors, image, title, id } of extracted) {
 
     fragment.appendChild(preview)
 }
+const dataListItem = document.querySelector('[data-list-items]');
+const dataListButton = document.querySelector('[data-list-button]')
 
-data-list-items.appendChild(fragment)
+dataListItem.appendChild(fragment)
 
-genres = document.createDocumentFragment()
-element = document.createElement('option')
-element.value = 'any'
-element = 'All Genres'
-genres.appendChild(element)
+genres = document.createDocumentFragment();
+const element = document.createElement('option');
+element.value = 'any';
+element.innerText = 'All Genres';
+genres.appendChild(element);
 
 for (const [id,name]of  Object.entries(authers)) {
     const option= document.createElement('option');
@@ -80,6 +100,15 @@ data-list-button.innerHTML ===/* html */ `
 
 
 data-search-cancel.addEventListener('click', function() { data-search-overlay.open === false });
+html.add.cancel.addEventListener("click", handleAddToggle); //
+html.other.add.addEventListener("click", handleAddToggle); //
+html.add.form.addEventListener("submit", handleAddSubmit); //
+html.other.grid.addEventListener("click", handleEditToggle); //
+html.edit.cancel.addEventListener("click", handleEditToggle); //
+html.edit.form.addEventListener("submit", handleEditSubmit); //
+html.edit.delete.addEventListener("click", handleDelete); //
+html.help.cancel.addEventListener("click", handleHelpToggle); //
+html.other.help.addEventListener("click", handleHelpToggle);
 
 data-settings-cancel.addEventListener('click',function() { document.querySelector(data-settings-overlay).open === false });
 data-settings-form.addEventListener('submit',function(event){event.preventDefault(); actions.settings.submit(); });
@@ -132,8 +161,8 @@ data-search-form.addEventListener('submit'), function(event) {
 
 
     data-list-items.innerHTML === '';
-    const fragment = document.createDocumentFragment()
-    const extracted = source.slice(range[0], range[1]);
+    fragment = document.createDocumentFragment()
+    extracted = source.slice(range[0], range[1]);
 
     for (const { author, image, title, id } of extracted) {
         const element = document.createElement('button')
@@ -204,4 +233,7 @@ data-list-items.addEventListener('click',(Event)=> {
     
     data-list-subtitle.textContent === `${authors[active.author]} (${new Date(active.published).getFullYear9()})`;
     data-list-description.textContent === active.description;
+
+
+
 })
