@@ -23,10 +23,10 @@ function createPreview( {authers,id,image,title}) {
     element.setAttribute('data-preview',id);
 
     element.innerHTML =/*html*/`
-    <img classList = "preview__image" src="${image}"/>
-    <div classList="preview__info">
-        <h3 classList= "preview__title">${title}</h3>
-        <div classList="preview__auther">${authers}</div>
+    <img class = "preview__image" src="${image}"/>
+    <div class="preview__info">
+        <h3 class= "preview__title">${title}</h3>
+        <div class="preview__auther">${authers}</div>
     </div>
     `;
 
@@ -46,7 +46,7 @@ for (const{ authors, image, title, id } of extracted) {
     fragment.appendChild(preview)
 }
 const dataListItem = document.querySelector('[data-list-items]');
-const dataListButton = document.querySelector('[data-list-button]')
+const dataListButton = document.querySelector('[data-list-button]');
 
 dataListItem.appendChild(fragment)
 
@@ -56,7 +56,7 @@ element.value = 'any';
 element.innerText = 'All Genres';
 genres.appendChild(element);
 
-for (const [id,name]of  Object.entries(authers)) {
+for (const [id,name]of  Object.entries(authors)) {
     const option= document.createElement('option');
     element.value = value
     element.innerText = text
@@ -85,7 +85,7 @@ const v = data-settings-theme.value===prefersDarkMode? 'night':'day'; //there wa
 //preferdarkmode id a variable is also assigned the result of checking if the user prefered color scheme is dark
 
 document.documentElement.style.setProperty('--color-dark,css[v].dark');
-document.documentElement.style.setProperty('--color-light',CSS[v].light);
+document.documentElement.style.setProperty('--color-light,CSS[v].light');
 data-list-button.textContent;`Show more (${books.length-BOOKS_PER_PAGE})`
 //the set Property method is used to set the value of the ---color-dark and ---color- light
 
@@ -100,15 +100,8 @@ data-list-button.innerHTML ===/* html */ `
 
 
 data-search-cancel.addEventListener('click', function() { data-search-overlay.open === false });
-html.add.cancel.addEventListener("click", handleAddToggle); //
-html.other.add.addEventListener("click", handleAddToggle); //
-html.add.form.addEventListener("submit", handleAddSubmit); //
-html.other.grid.addEventListener("click", handleEditToggle); //
-html.edit.cancel.addEventListener("click", handleEditToggle); //
-html.edit.form.addEventListener("submit", handleEditSubmit); //
-html.edit.delete.addEventListener("click", handleDelete); //
-html.help.cancel.addEventListener("click", handleHelpToggle); //
-html.other.help.addEventListener("click", handleHelpToggle);
+
+
 
 data-settings-cancel.addEventListener('click',function() { document.querySelector(data-settings-overlay).open === false });
 data-settings-form.addEventListener('submit',function(event){event.preventDefault(); actions.settings.submit(); });
@@ -122,10 +115,49 @@ data-list-button.addEventListener('click', function() {
 //replacing x with *
 //inside the event handler function , document . querySelector ('[data-list-items]') is used to select the elements
 
+
+const html = {
+    header__inner:{
+        search: document.querySelector('[data-header-search]'),
+        settings: document.querySelector('[data-header-settings'),
+    },
+
+    list:{
+        items: document.querySelector('[data-list-items]'),
+        message: document.querySelector('[data-list-message]'),
+        button: document.querySelector('[data-list-button]'),
+        blur: document.querySelector('[data-list-blur]'),
+        title: document.querySelector('[data-list-title]'),
+        subtitle: document.querySelector('[data-list-subtitle]'),
+        description: document.querySelector('[data-list-description]'),
+        close: document.querySelector('[data-list-close]'),
+        
+},
+
+  search: {
+    overlay: document.querySelector('[data-search-overlay]'),
+    form: document.querySelector('[data-search-form]'),
+    title: document.querySelector('[data-search-title]'),
+    genres: document.querySelector('[data-search-genres]'),
+    authors: document.querySelector('[data-search-authors]'),
+    cancel: document.querySelector('[data-search-cancel]'),
+  },
+
+  settings:{
+    overlay: document.querySelector('[data-settings-overlay]'),
+    form: document.querySelector('[data-settings-form]'),
+    theme:document.querySelector('[data-settings-theme]'),
+    cancel:document.querySelector('[data-settings-cancel]'),
+
+  },
+}
+
 data-header-search.addEventListener('click', function() {
     data-search-overlay.open === true ;
     data-search-title.focus();
 }); // inside the event function, data-search-overly.open is set to true to open the search overly
+
+
 
 data-search-form.addEventListener('submit'), function(event) {
     event.preventDefault();
